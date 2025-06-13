@@ -1,11 +1,4 @@
-// 1. Install the Emojeme extension: https://chromewebstore.google.com/detail/emojme-emoji-anywhere/nbnaglaclijdfidbinlcnfdbikpbdkog?hl=en-US&pli=1
-// 2. Go to the custom emoji page for the Slack: https://mywslack.com/customize/emoji
-// 3. Open the extension and wait for it to refresh.
-// 4. Click "Get Slack Token and Cookie".
-// 5. Run this script, using the copied JSON as the argument.
-
-// Example JSON:
-// {"token":"xoxc-0000000000000-1111111111111-2222222222222-33333333444444445555555566666666777777778888888899999999aaaaaaaa","domain":"myslack","cookie":"xoxd-cookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiexx"}
+// Example JSON: {"token":"xoxc-0000000000000-1111111111111-2222222222222-33333333444444445555555566666666777777778888888899999999aaaaaaaa","domain":"myslack","cookie":"xoxd-cookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiecookiexx"}
 
 if (process.argv.length === 2) {
     console.error('Pass the Emojeme JSON as argument 1');
