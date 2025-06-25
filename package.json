@@ -1,6 +1,6 @@
 {
     "name": "emojis",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -17,6 +17,7 @@
     },
     "homepage": "https://github.com/zatech/emojis#readme",
     "dependencies": {
-        "emojme": "^2.0.1"
+        "emojme": "^2.0.1",
+        "minimist": "^1.2.8"
     }
 }
