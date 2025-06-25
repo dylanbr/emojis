@@ -1,5 +1,6 @@
 import emojme from 'emojme';
 import fs from 'fs';
+import EmojiDelete from './emoji-delete.js';
 
 function getLocalEmojis() {
     return fs.readdirSync('./emojis/')
@@ -54,9 +55,20 @@ async function addEmojis(auth, emojis) {
     }
 }
 
+async function deleteEmojis(auth, emojiNames) {
+    const emojiDelete = new EmojiDelete(
+        auth.domain,
+        auth.token,
+        auth.cookie,
+    );
+
+    const response = await emojiDelete.delete(emojiNames);
+    console.log(response);
+}
 
 export {
     getLocalEmojis,
     getRemoteEmojis,
     addEmojis,
+    deleteEmojis,
 };
