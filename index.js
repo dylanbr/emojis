@@ -24,7 +24,7 @@ try {
 }
 
 const remoteEmojis = await getRemoteEmojis(auth);
-const localEmojis = getLocalEmojis();
+const localEmojis = await getLocalEmojis();
 
 const emojisMissingFromRemote = localEmojis.filter((emoji) => {
     return remoteEmojis.indexOf(emoji.name) === -1;

@@ -1,19 +1,18 @@
 import emojme from 'emojme';
-import fs from 'fs';
+import {globby} from 'globby';
+import path from 'path';
 import EmojiDelete from './emoji-delete.js';
 
-function getLocalEmojis() {
-    return fs.readdirSync('./emojis/')
-        // Remove hidden files and directory markers.
-        .filter((fn) => {
-            return fn.substr(0, 1) !== '.';
-        })
-        .map((file) => {
-            return {
-                name: removeExt(file),
-                file,
-            };
-        });
+async function getLocalEmojis() {
+    const files = await globby('./emojis/**/*', {
+        onlyFiles: true,
+        dot: false, // skip hidden files
+    });
+
+    return files.map((file) => ({
+        name: path.parse(file).name,
+        file,
+    }));
 }
 
 function removeExt(string) {
@@ -29,7 +28,7 @@ async function getRemoteEmojis(auth) {
             save: false,
             bustCache: true,
             output: false,
-        }
+        },
     );
 
     return response[auth.domain].emojiList.map(e => e.name);
@@ -42,7 +41,7 @@ async function addEmojis(auth, emojis) {
             auth.token,
             auth.cookie,
             {
-                src: emojis.map(emoji => './emojis/' + emoji.file), // File paths
+                src: emojis.map(emoji => emoji.file), // File paths
                 name: emojis.map(emoji => emoji.name), // Emoji names
                 bustCache: false,
                 avoidCollisions: false,
