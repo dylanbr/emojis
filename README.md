@@ -31,4 +31,5 @@ If in doubt, see [this article](https://get.slack.help/hc/en-us/articles/2068701
 - Fork this repository.
 - Create a new feature branch off `master` (e.g. `git checkout -b mc-picard-facepalm`).
 - You may add multiple emojis per branch, but keep it to a reasonable number, to avoid delays in review and merge.
+- If the emoji you're adding fits into one of the `./emojis` sub-directories, add it to that directory, otherwise add it directly to `./emojis`.
 - Submit a PR from your branch to `dylanbr/master`.
