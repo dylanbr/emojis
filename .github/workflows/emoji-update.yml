@@ -1,9 +1,12 @@
 name: Emoji Update
 
+# This workflow is being kept in the repo, but is currently not used, and
+# automatic triggering is disabled. It also needs to be updated to use the new
+# auth JSON before being re-enabled.
 on:
-  push:
-    branches:
-      - master
+#  push:
+#    branches:
+#      - master
   workflow_dispatch:
 
 jobs:
